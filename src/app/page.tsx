@@ -47,11 +47,6 @@ export default function DonationPage() {
       <div className="container mx-auto max-w-4xl px-4 py-12">
         {/* Hero Section */}
         <div className="mb-12 text-center">
-          <img
-            src="/placeholder.svg?height=300&width=600&text=Children+accessing+clean+water"
-            alt="Children accessing clean water"
-            className="mb-8 h-64 w-full rounded-lg object-cover shadow-lg"
-          />
           <h2 className="mb-4 text-4xl font-bold text-gray-900 dark:text-white">
             Help Bring Clean Water to Rural Communities
           </h2>
@@ -180,10 +175,10 @@ export default function DonationPage() {
               <div className="rounded-lg border border-blue-200 bg-blue-50 p-4 text-sm dark:border-blue-900/50 dark:bg-blue-900/20">
                 <p className="text-blue-800 dark:text-blue-200">
                   <strong>Impact:</strong> Your $
-                  {selectedAmount || customAmount || "XX"} donation will provide
+                  {selectedAmount ?? customAmount ?? "XX"} donation will provide
                   clean water for{" "}
                   {Math.floor(
-                    (selectedAmount || Number.parseInt(customAmount) || 0) / 25,
+                    (selectedAmount ?? Number.parseInt(customAmount) ?? 0) / 25,
                   )}{" "}
                   people for a full year!
                 </p>
@@ -191,7 +186,7 @@ export default function DonationPage() {
 
               <div className="space-y-3">
                 <Button className="w-full bg-blue-600 py-4 text-lg font-semibold text-white hover:bg-blue-700">
-                  Donate ${selectedAmount || customAmount || "0"} Now
+                  Donate ${selectedAmount ?? customAmount ?? "0"} Now
                 </Button>
 
                 <div className="text-center">

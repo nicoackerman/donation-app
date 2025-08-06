@@ -6,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Progress } from "~/components/ui/progress";
-import { Droplets, Heart, Users } from "lucide-react";
-import { ModeToggle } from "~/components/mode-toggle";
+import { Heart, Users } from "lucide-react";
+import { Header } from "~/components/main/header";
 
 export default function DonationPage() {
   const [selectedAmount, setSelectedAmount] = useState<number | null>(null);
@@ -31,18 +31,7 @@ export default function DonationPage() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-gray-900">
-      {/* Header */}
-      <header className="bg-gray-50 dark:bg-gray-950">
-        <div className="container mx-auto flex items-center justify-between px-4 py-4">
-          <div className="flex items-center space-x-3">
-            <Droplets className="h-8 w-8 text-blue-500" />
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">
-              Clean Water for All
-            </h1>
-          </div>
-          <ModeToggle />
-        </div>
-      </header>
+      <Header />
 
       <div className="container mx-auto max-w-4xl px-4 py-12">
         {/* Hero Section */}

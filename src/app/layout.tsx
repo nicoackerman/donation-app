@@ -2,12 +2,12 @@ import "~/styles/globals.css";
 
 import { type Metadata } from "next";
 import { Geist } from "next/font/google";
-import { ThemeProvider } from "~/components/theme-provider";
+import { Providers } from "~/components/providers";
 
 export const metadata: Metadata = {
-  title: "Donation App",
-  description: "Just donate",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  title: "Whatsapp Clone",
+  description: "A whatsapp clone app created by nicoackerman",
+  icons: [{ rel: "icon", url: "/whatsapp.png" }],
 };
 
 const geist = Geist({
@@ -19,16 +19,9 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${geist.variable}`}>
-      <body>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+    <html lang="en" suppressHydrationWarning className={`${geist.variable}`}>
+      <body suppressHydrationWarning>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
